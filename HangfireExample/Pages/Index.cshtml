@@ -1,0 +1,28 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h1>Hangfire Examples:</h1>
+
+<br />
+<a href="/?option=fire-forget">Fire Forget</a>
+<br />
+<a href="/?option=delayed">Delayed Job (30s)</a>
+<br />
+<a href="/?option=recurring">Recurring (every minute)</a>
+<br />
+
+<h1># Jobs</h1>
+
+<table>
+
+@foreach (var job in IndexModel.jobs)
+{
+    <tr>
+        <td>@job.ToString()</td>
+    </tr>
+}
+
+</table>
